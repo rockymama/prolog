@@ -1,0 +1,20 @@
+Description: Prolog is a logic programming language associated with artificial intelligence and computational linguistics
+
+Program 2:Find out whether an element is a member of the list using recursion
+
+Code:
+% Base case: Element is the head of the list.
+member(X, [X|_]).
+% Recursive case: Element is in the tail of the list.
+member(X, [_|T]) :- member(X, T).
+
+Queries:
+member(2, [1, 2, 3]).
+member(4, [1, 2, 3]). 
+member(john, [mary, jane, john]). 
+member(pizza, [sushi, burger, pizza]).
+
+The output of Queries: True
+False
+True
+True
