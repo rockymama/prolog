@@ -1,1 +1,25 @@
 Description: Prolog is a logic programming language associated with artificial intelligence and computational linguistics
+
+Program 4: Demonstrate the usage of ‘cut-fail’ combination.
+
+Code:
+% Base case: Check if a list is empty.
+my_last([], _) :- !, fail.
+% Base case: Check if a list has only one element.
+my_last([X], X) :- !.
+% Recursive case: Remove the first element of the list and continue until there is only one element left.
+my_last([_|T], X) :- my_last(T, X).
+
+Queries:
+my_last([1, 2, 3], X).
+my_last([], X).
+my_last([a], X).
+my_last([a, b, c, d], X), X \= d. 
+my_last([a, b, c, d], d).
+
+The output of Queries:
+X=3
+False
+x=a
+True
+True
