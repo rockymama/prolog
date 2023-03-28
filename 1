@@ -1,0 +1,19 @@
+Description: Prolog is a logic programming language associated with artificial intelligence and computational linguistics
+
+Program 1: Design a simple database in Prolog using constants and variables and execute queries. 
+
+Code: 
+% Constants (facts)
+likes(john, pizza).
+likes(mary, sushi).
+likes(jane, pizza).
+likes(jane, sushi).
+% Variables (rules)
+likes_both(X,Y,Z) :- likes(X,Z), likes(Y,Z).
+likes_pizza(X) :- likes(X,pizza).
+
+Queries: 
+likes(john, pizza). 
+likes(jane, burger). 
+likes_both(john, mary, pizza). 
+likes_pizza(X). 
