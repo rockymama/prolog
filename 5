@@ -1,0 +1,39 @@
+Description: Prolog is a logic programming language associated with artificial intelligence and computational linguistics
+
+Program5: Demonstrate Input / Output in Prolog: 
+(i) Reading and writing Terms
+(ii) Reading and writing Characters 
+(iii) Reading English sentences
+
+Code:
+
+(i) Reading and writing Terms
+% Reading and writing terms
+read_write_terms :- write('Enter a term: '), 
+read(Term), 
+write('You entered: '), 
+write(Term), 
+nl.
+
+(ii) Reading and writing Characters 
+% Reading and writing characters
+read_write_chars :- write('Enter a character: '), 
+read_line_to_string(user_input, String), 
+string_chars(String, [Char|_]), 
+write('You entered: '), 
+write(Char), 
+nl.
+
+(iii) Reading English sentences
+% Reading English sentences
+read_write_sentences :- write('Enter an English sentence: '), 
+read_line_to_codes(user_input, Line), 
+string_codes(Sentence, Line), 
+write('You entered: '), 
+write(Sentence), 
+nl.
+
+Queries:
+read_write_terms.
+read_write_chars.
+read_write_sentences
