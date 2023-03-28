@@ -1,25 +1,19 @@
 Description: Prolog is a logic programming language associated with artificial intelligence and computational linguistics
 
-Program 4: Demonstrate the usage of ‘cut-fail’ combination.
+Program 3: Find out the sum of numbers from 1 to N using ‘cut’ predicate.
 
 Code:
-% Base case: Check if a list is empty.
-my_last([], _) :- !, fail.
-% Base case: Check if a list has only one element.
-my_last([X], X) :- !.
-% Recursive case: Remove the first element of the list and continue until there is only one element left.
-my_last([_|T], X) :- my_last(T, X).
+% Base case: Sum of 0 numbers is 0.
+sum(0, 0) :- !.
+% Recursive case: Sum of N numbers is N plus the sum of the first N-1 numbers.
+sum(N, S) :- N1 is N-1, sum(N1, S1), S is S1+N, !.
 
 Queries:
-my_last([1, 2, 3], X).
-my_last([], X).
-my_last([a], X).
-my_last([a, b, c, d], X), X \= d. 
-my_last([a, b, c, d], d).
+sum(0, X).
+sum(10, X).
+sum(5, X).
 
 The output of Queries:
-X=3
-False
-x=a
-True
-True
+X=0
+X=55
+X=15
